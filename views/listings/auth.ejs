@@ -1,0 +1,18 @@
+<% layout("/layouts/boilerplate") %>
+
+  <div class="container text-center mt-5 ">
+    <div class="card p-4 ">
+      <h3 class="mb-4">To create a post, you must be logged in</h3>
+
+      <div class="d-grid gap-3 col-3 mx-auto">
+        <a href="/login" class="btn btn-primary">Login</a>
+        <a href="/signup" class="btn btn-success">Signup</a>
+        <a href="/posts" class="btn btn-outline-secondary">Back to All Posts</a>
+        
+        <% if (isLoggedIn) { %>
+          <a href="/logout" class="btn btn-danger">Logout</a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+

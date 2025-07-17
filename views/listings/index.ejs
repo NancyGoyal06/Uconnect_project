@@ -1,0 +1,30 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="container py-5">
+    <h1 class="text-center mb-5 fw-bold" style="background: linear-gradient(90deg, #007cf0, #00dfd8); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        Quora Posts
+    </h1>
+
+    <div class="row">
+        <% for(post of posts) { %>
+            <div class="col-md-6 col-lg-4 mb-4 d-flex">
+                <div class="card shadow-lg border-0 px-3 py-3 equal-card w-100" style="background: linear-gradient(135deg, #f5f7fa, #c3cfe2);">
+                    <div class="card-body p-3 d-flex flex-column">
+                        <span class="badge bg-primary text-uppercase mb-2 col-4">@<%= post.username %></span>
+                        <p class="card-text text-dark small card-text-preview" style="font-size: 0.9rem;"><%= post.content %></p>
+                        <div class="mt-auto">
+                            <a href="http://localhost:8080/posts/<%=post.id%>" class="btn btn-outline-dark btn-sm mt-2">See in Detail</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    </div>
+
+    <div class="text-center mt-5">
+        <a href="http://localhost:8080/posts/new" class="btn btn-lg btn-gradient" style="background: linear-gradient(90deg, #00c9ff, #92fe9d); color: black; border: none; box-shadow: 0 4px 20px rgba(0,0,0,0.2);">
+            Create New Post
+        </a>
+    </div>
+</div>
